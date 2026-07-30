@@ -2210,7 +2210,7 @@
   }
 
   .hero-promo {
-    padding-top: 25vh !important;
+    padding-top: 5vh !important;
   }
 
   .hp-row1 {
@@ -2238,7 +2238,7 @@
   .hp-div {
     width: 100% !important;
     max-width: 100% !important;
-    margin: 14px 0 8px 0 !important;
+    margin: 2px 0 10px 0 !important;
   }
 
   .hp-small {
