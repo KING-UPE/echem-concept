@@ -2133,6 +2133,11 @@
 }
 
 @media (max-width: 900px) {
+  /* ── HERO VIDEO MOBILE FOCUS (65%-75% Scene Focalization) ── */
+  #hero-video {
+    object-position: 70% center !important;
+  }
+
   /* ── NAVBAR MOBILE DRAWER (Oval Glass Capsule) ── */
   .nav-hamburger {
     display: flex !important;
