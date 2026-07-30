@@ -359,7 +359,8 @@
     .hp-bold { font-size: clamp(2.4rem, 4.8vw, 3.3rem); font-weight: 700; color: #fff; line-height: 1.06; letter-spacing: -0.5px; font-family: var(--font-si); }
     .hp-letter-a { font-size: 1.25em; font-weight: 900; font-family: 'Plus Jakarta Sans', sans-serif; margin-left: 4px; display: inline-block; }
     
-    .hp-frac-wrap { display: flex; align-items: center; padding-right: 10px; flex-shrink: 0; }
+    .hp-frac { padding: 0 !important; margin: 0 !important; }
+  .hp-frac-wrap { display: flex; align-items: center; padding-right: 10px; flex-shrink: 0; }
     .hp-frac { display: inline-flex; align-items: center; font-family: 'Times New Roman', Times, Georgia, serif; color: var(--primary); font-weight: 700; line-height: 1; position: relative; padding: 12px 0; }
     .hp-num { font-size: 6.2rem; font-family: 'Times New Roman', Times, Georgia, serif; font-weight: 700; transform: translateY(-22px); }
     .hp-slash { font-size: 10rem; font-weight: 100; font-family: 'Times New Roman', Times, Georgia, serif; margin: 0 -12px; transform: scaleY(1.1) rotate(6deg); }
@@ -2227,6 +2228,7 @@
     font-size: clamp(1.4rem, 5vw, 1.9rem) !important;
   }
 
+  .hp-frac { padding: 0 !important; margin: 0 !important; }
   .hp-frac-wrap {
     transform: scale(0.55) !important;
     transform-origin: left center !important;
@@ -2238,7 +2240,7 @@
   .hp-div {
     width: 100% !important;
     max-width: 100% !important;
-    margin: -16px 0 10px 0 !important;
+    margin: -28px 0 10px 0 !important;
   }
 
   .hp-small {
