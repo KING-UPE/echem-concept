@@ -38,6 +38,11 @@
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    html, body {
+      overflow-x: hidden !important;
+      max-width: 100% !important;
+      width: 100% !important;
+    }
     html { scroll-behavior: auto; }
     body {
       background: var(--bg-void);
@@ -2133,9 +2138,12 @@
 }
 
 @media (max-width: 900px) {
-  /* ── HERO VIDEO MOBILE FOCAL POINT (65%-75% Section Focus) ── */
+  /* ── HERO VIDEO MOBILE FOCAL POINT (70%-80% Section Focus & Overflow Fix) ── */
   #hero-video {
-    object-position: 70% center !important;
+    object-position: 78% center !important;
+  }
+  .hero-orb1, .hero-orb2 {
+    display: none !important;
   }
   /* ── NAVBAR MOBILE DRAWER (Oval Glass Capsule) ── */
   .nav-hamburger {
