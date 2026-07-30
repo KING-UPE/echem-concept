@@ -2210,7 +2210,7 @@
   }
 
   .hero-promo {
-    padding-top: 2vh !important;
+    padding-top: 25vh !important;
   }
 
   .hp-row1 {
@@ -2219,7 +2219,8 @@
   }
 
   .hp-year {
-    font-size: 0.9rem !important;
+    font-size: 0.72rem !important;
+    white-space: nowrap !important;
   }
 
   .hp-bold {
@@ -2241,7 +2242,7 @@
   }
 
   .hp-small {
-    font-size: 0.9rem !important;
+    font-size: 0.75rem !important;
     line-height: 1.2 !important;
   }
 
