@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 let lenis;
 
 /* ── LOADER ── */
@@ -717,9 +717,9 @@ function initProcessScroll() {
 
   ScrollTrigger.create({
     trigger: processSec,
-    pin: true,
-    start: 'top 12%',
-    end: '+=1100',
+    pin: !isMobile,
+    start: isMobile ? 'top 75%' : 'top 12%',
+    end: isMobile ? 'bottom 60%' : '+=1100',
     scrub: 0.8,
     invalidateOnRefresh: true,
     onUpdate: (self) => {
