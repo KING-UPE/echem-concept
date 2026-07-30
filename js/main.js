@@ -672,8 +672,13 @@ function initGallery(){
 
     const loadMoreBtn = document.getElementById('gal-load-more');
     if(loadMoreBtn) {
-      if(visibleCount > limit && !expanded) {
+      if(visibleCount > limit) {
         loadMoreBtn.style.display = 'inline-flex';
+        if(expanded) {
+          loadMoreBtn.innerHTML = 'Show Less <i class="fas fa-chevron-up" style="margin-left: 8px;"></i>';
+        } else {
+          loadMoreBtn.innerHTML = 'Show More <i class="fas fa-chevron-down" style="margin-left: 8px;"></i>';
+        }
       } else {
         loadMoreBtn.style.display = 'none';
       }
@@ -695,8 +700,14 @@ function initGallery(){
   const loadMoreBtn = document.getElementById('gal-load-more');
   if(loadMoreBtn) {
     loadMoreBtn.addEventListener('click', () => {
-      expanded = true;
+      expanded = !expanded;
       updateGalleryDisplay();
+      if (!expanded) {
+        const galHd = document.getElementById('gallery');
+        if (galHd && typeof lenis !== 'undefined') {
+          lenis.scrollTo(galHd, {offset: -80, duration: 1.2});
+        }
+      }
     });
   }
   const lb=document.getElementById('lb');
