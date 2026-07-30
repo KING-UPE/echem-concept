@@ -1,4 +1,4 @@
-/* ── DESIGN SYSTEM & ROOT VARIABLES ── */
+﻿/* ── DESIGN SYSTEM & ROOT VARIABLES ── */
     :root {
       --bg-void:       #07060a;
       --bg-deep:       #0d0b10;
@@ -1629,7 +1629,7 @@
       .proc-step { padding: 20px 24px; gap: 18px; }
       .proc-step:hover { transform: translateX(4px); }
       .hero-glass { padding: 16px 20px; }
-      #hotline { bottom: 16px; right: 16px; padding: 8px 16px; }
+      #floating-hotline { bottom: 36px; right: 16px; padding: 8px 16px; }
       #back-top { bottom: 16px; left: 16px; width: 40px; height: 40px; }
       .cen-map { max-width: 260px; }
       #sl-map { max-width: 260px; }
@@ -1658,7 +1658,7 @@
       .ft-links { grid-template-columns: 1fr; gap: 20px; }
       .glass-c { padding: 18px; }
       .flt-btn { padding: 6px 14px; font-size: 0.78rem; }
-      #hotline { bottom: 12px; right: 12px; padding: 7px 14px; }
+      #floating-hotline { bottom: 32px; right: 12px; padding: 7px 14px; }
       .hl-lbl { display: none; }
       #back-top { bottom: 12px; left: 12px; width: 36px; height: 36px; font-size: 0.8rem; }
       nav#navbar { top: 12px; padding: 0 10px; }
@@ -2152,6 +2152,7 @@
   }
 
   .nav-links {
+    display: flex !important;
     position: fixed !important;
     top: 76px !important;
     left: 50% !important;
