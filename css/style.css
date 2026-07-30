@@ -2122,3 +2122,181 @@
       transform: translateY(-2px);
       box-shadow: 0 6px 20px rgba(245, 166, 35, 0.3);
     }
+
+/* ══════════════════════════════════════════════════════════════════
+   ═══ FULL MOBILE & TABLET RESPONSIVE STYLES ═══
+   ══════════════════════════════════════════════════════════════════ */
+
+/* Hide desktop overlay completely */
+.dt-overlay {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  /* ── NAVBAR MOBILE DRAWER (Oval Glass Capsule) ── */
+  .nav-hamburger {
+    display: flex !important;
+    z-index: 1001;
+  }
+
+  .nav-links {
+    position: fixed !important;
+    top: 76px !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(-15px) scale(0.95) !important;
+    width: min(340px, 90vw) !important;
+    background: linear-gradient(145deg, rgba(22, 18, 30, 0.96) 0%, rgba(10, 8, 16, 0.98) 100%) !important;
+    backdrop-filter: blur(28px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(28px) saturate(180%) !important;
+    border: 1.5px solid rgba(245, 166, 35, 0.42) !important;
+    border-radius: 28px !important;
+    padding: 22px 18px !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.95), 0 0 35px rgba(245, 166, 35, 0.28) !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s !important;
+    visibility: hidden !important;
+    z-index: 1000 !important;
+  }
+
+  .nav-links.open {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    transform: translateX(-50%) translateY(0) scale(1) !important;
+    visibility: visible !important;
+  }
+
+  .nav-links a {
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+    padding: 10px 16px !important;
+    width: 100% !important;
+    text-align: center !important;
+    border-radius: 20px !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    transition: background 0.25s ease, color 0.25s ease !important;
+  }
+
+  .nav-links a:hover, .nav-links a.active {
+    background: rgba(245, 166, 35, 0.16) !important;
+    color: var(--primary) !important;
+  }
+
+  .nav-links a.active::after {
+    display: none !important;
+  }
+}
+
+@media (max-width: 600px) {
+  /* ── HERO TEXT MOBILE SCALING ── */
+  .hero-content {
+    padding: 0 4vw !important;
+    width: 100% !important;
+  }
+
+  .hero-promo {
+    padding-top: 2vh !important;
+  }
+
+  .hp-row1 {
+    gap: 10px !important;
+    justify-content: space-between !important;
+  }
+
+  .hp-year {
+    font-size: 1.1rem !important;
+  }
+
+  .hp-bold {
+    font-size: clamp(1.75rem, 6.2vw, 2.4rem) !important;
+  }
+
+  .hp-frac-wrap {
+    transform: scale(0.72) !important;
+    transform-origin: right center !important;
+    margin-right: -10px !important;
+    padding-right: 0 !important;
+  }
+
+  .hp-div {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 6px 0 12px 0 !important;
+  }
+
+  .hp-small {
+    font-size: 1.1rem !important;
+    line-height: 1.3 !important;
+  }
+
+  .hp-record {
+    font-size: clamp(1.5rem, 5vw, 2rem) !important;
+    margin-bottom: -10px !important;
+  }
+
+  .hp-chem {
+    font-size: clamp(2.1rem, 8.5vw, 3.2rem) !important;
+  }
+
+  .hp-badge {
+    font-size: clamp(1.1rem, 4vw, 1.4rem) !important;
+    padding: 3px 12px 3px 18px !important;
+  }
+
+  .hp-massive {
+    font-size: clamp(4.2rem, 16vw, 6.8rem) !important;
+  }
+
+  .hero-cta {
+    gap: 10px !important;
+    width: 100% !important;
+    margin-top: 20px !important;
+  }
+
+  .hero-cta .btn {
+    padding: 11px 18px !important;
+    font-size: 0.8rem !important;
+    flex: 1 !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  /* ── FLOATING WIDGETS MOBILE POSITIONING ── */
+  .hl-glass-box {
+    bottom: 16px !important;
+    right: 16px !important;
+    padding: 8px 14px !important;
+  }
+
+  .chat-trig-btn {
+    bottom: 72px !important;
+    right: 16px !important;
+    width: 46px !important;
+    height: 46px !important;
+  }
+
+  .btt-btn {
+    bottom: 126px !important;
+    right: 16px !important;
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  body.scrolled-down .chat-trig-btn {
+    bottom: 72px !important;
+  }
+
+  body.scrolled-down .btt-btn {
+    bottom: 126px !important;
+  }
+
+  .bot-modal {
+    right: 12px !important;
+    left: 12px !important;
+    width: auto !important;
+    max-width: none !important;
+    bottom: 80px !important;
+  }
+}
