@@ -1,4 +1,4 @@
-/* ── DESIGN SYSTEM & ROOT VARIABLES ── */
+﻿/* ── DESIGN SYSTEM & ROOT VARIABLES ── */
     :root {
       --bg-void:       #07060a;
       --bg-deep:       #0d0b10;
@@ -2289,25 +2289,25 @@
   }
 
   .chat-trig-btn {
-    bottom: 105px !important;
+    bottom: 85px !important;
     right: 16px !important;
     width: 46px !important;
     height: 46px !important;
   }
 
   .btt-btn {
-    bottom: 160px !important;
+    bottom: 140px !important;
     right: 16px !important;
     width: 40px !important;
     height: 40px !important;
   }
 
   body.scrolled-down .chat-trig-btn {
-    bottom: 105px !important;
+    bottom: 85px !important;
   }
 
   body.scrolled-down .btt-btn {
-    bottom: 160px !important;
+    bottom: 140px !important;
   }
 
   .bot-modal {
