@@ -356,7 +356,7 @@
     .hp-yr-num { font-size: 1em; font-weight: 300; margin-right: 4px; font-family: 'Plus Jakarta Sans', sans-serif; }
     .hp-row1 { display: flex; align-items: center; justify-content: flex-start; gap: 20px; width: 100%; }
     .hp-text { display: flex; flex-direction: column; justify-content: center; }
-    .hp-bold { font-size: clamp(1.8rem, 3.2vw, 3.3rem); font-weight: 700; color: #fff; line-height: 1.06; letter-spacing: -0.5px; font-family: var(--font-si); }
+    .hp-bold { font-size: clamp(1.8rem, 3.2vw, 3.3rem); font-weight: 700; color: #fff; line-height: 1.2; letter-spacing: -0.5px; font-family: var(--font-si); }
     .hp-letter-a { font-size: 1.25em; font-weight: 900; font-family: 'Plus Jakarta Sans', sans-serif; margin-left: 4px; display: inline-block; }
     
     .hp-frac { padding: 0 !important; margin: 0 !important; }
@@ -2228,6 +2228,7 @@
 
   .hp-bold {
     font-size: clamp(1.4rem, 5vw, 1.9rem) !important;
+    line-height: 1.2 !important;
   }
 
   .hp-frac { padding: 0 !important; margin: 0 !important; }
@@ -2242,7 +2243,7 @@
   .hp-div {
     width: 100% !important;
     max-width: 100% !important;
-    margin: -28px 0 10px 0 !important;
+    margin: 8px 0 12px 0 !important;
   }
 
   .hp-small {
