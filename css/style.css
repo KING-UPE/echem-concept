@@ -354,7 +354,7 @@
     .hp-top { margin-bottom: 0px; width: 100%; }
     .hp-year { font-size: 1.35rem; color: rgba(255,255,255,0.9); margin-bottom: 2px; font-weight: 300; font-family: var(--font-si); line-height: 1; }
     .hp-yr-num { font-size: 1em; font-weight: 300; margin-right: 4px; font-family: 'Plus Jakarta Sans', sans-serif; }
-    .hp-row1 { display: flex; align-items: center; justify-content: flex-start; gap: 36px; width: 100%; }
+    .hp-row1 { display: flex; align-items: center; justify-content: flex-start; gap: 20px; width: 100%; }
     .hp-text { display: flex; flex-direction: column; justify-content: center; }
     .hp-bold { font-size: clamp(2.4rem, 4.8vw, 3.3rem); font-weight: 700; color: #fff; line-height: 1.06; letter-spacing: -0.5px; font-family: var(--font-si); }
     .hp-letter-a { font-size: 1.25em; font-weight: 900; font-family: 'Plus Jakarta Sans', sans-serif; margin-left: 4px; display: inline-block; }
@@ -366,7 +366,7 @@
     .hp-den { font-size: 6.2rem; font-family: 'Times New Roman', Times, Georgia, serif; font-weight: 700; transform: translateY(28px); }
     .hp-suffix { font-size: 2.2rem; color: #fff; font-weight: 600; margin-left: 10px; font-family: var(--font-si); align-self: center; transform: translateY(0); }
 
-    .hp-div { border: none; height: 1px; background: linear-gradient(90deg, rgba(255,255,255,0.4) 0%, rgba(245, 166, 35, 0.3) 60%, transparent 100%); margin: 8px 0 16px 0; width: 520px; max-width: 90%; }
+    .hp-div { border: none; height: 1px; background: linear-gradient(90deg, rgba(255,255,255,0.4) 0%, rgba(245, 166, 35, 0.3) 60%, transparent 100%); margin: 24px 0 18px 0; width: 520px; max-width: 90%; }
 
     .hp-mid { margin-bottom: 16px; width: 100%; }
     .hp-small { font-size: 1.35rem; color: rgba(255,255,255,0.88); line-height: 1.35; margin-bottom: 6px; font-weight: 300; font-family: var(--font-si); }
@@ -2213,8 +2213,8 @@
   }
 
   .hp-row1 {
-    gap: 10px !important;
-    justify-content: space-between !important;
+    gap: 12px !important;
+    justify-content: flex-start !important;
   }
 
   .hp-year {
@@ -2227,15 +2227,16 @@
 
   .hp-frac-wrap {
     transform: scale(0.72) !important;
-    transform-origin: right center !important;
-    margin-right: -10px !important;
+    transform-origin: left center !important;
+    margin-left: 0px !important;
+    margin-right: 0 !important;
     padding-right: 0 !important;
   }
 
   .hp-div {
     width: 100% !important;
     max-width: 100% !important;
-    margin: 6px 0 12px 0 !important;
+    margin: 22px 0 14px 0 !important;
   }
 
   .hp-small {
