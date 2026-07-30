@@ -2418,3 +2418,11 @@
     font-size: 1.1rem !important;
   }
 }
+
+
+/* Small height desktop optimization for process section */
+@media (max-height: 800px) and (min-width: 993px) {
+  #process {
+    padding: 60px 0 80px 0 !important;
+  }
+}

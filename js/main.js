@@ -718,7 +718,7 @@ function initProcessScroll() {
   ScrollTrigger.create({
     trigger: processSec,
     pin: !isMobile,
-    start: isMobile ? 'top 75%' : 'top 12%',
+    start: isMobile ? 'top 75%' : 'top 4%',
     end: isMobile ? 'bottom 60%' : '+=1100',
     scrub: 0.8,
     invalidateOnRefresh: true,
