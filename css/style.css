@@ -1635,6 +1635,7 @@
       .cen-map { max-width: 260px; }
       #sl-map { max-width: 260px; }
       .glass-c { padding: 24px; }
+      .scroll-hint { display: none !important; }
     }
 
     @media (max-width: 480px) {
@@ -2282,31 +2283,31 @@
 
   /* ── FLOATING WIDGETS MOBILE POSITIONING ── */
   .hl-glass-box {
-    bottom: 16px !important;
+    bottom: 40px !important;
     right: 16px !important;
     padding: 8px 14px !important;
   }
 
   .chat-trig-btn {
-    bottom: 90px !important;
+    bottom: 105px !important;
     right: 16px !important;
     width: 46px !important;
     height: 46px !important;
   }
 
   .btt-btn {
-    bottom: 146px !important;
+    bottom: 160px !important;
     right: 16px !important;
     width: 40px !important;
     height: 40px !important;
   }
 
   body.scrolled-down .chat-trig-btn {
-    bottom: 90px !important;
+    bottom: 105px !important;
   }
 
   body.scrolled-down .btt-btn {
-    bottom: 146px !important;
+    bottom: 160px !important;
   }
 
   .bot-modal {
