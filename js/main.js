@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 let lenis;
 
 /* ── LOADER ── */
@@ -574,12 +574,7 @@ function initScrollFx(){
     });
   });
 
-  /* gallery items */
-  document.querySelectorAll('.gal-item').forEach((el,i)=>{
-    gsap.fromTo(el,{opacity:0,scale:.94},{opacity:1,scale:1,duration:.55,delay:(i%4)*.08,ease:'power2.out',
-      scrollTrigger:{trigger:'#gal-grid',start:'top 85%',toggleActions:'play none none none'}
-    });
-  });
+  /* gallery items initial reveal - moved to initGallery */
 
   /* about image parallax */
   if(document.querySelector('.ab-frame img')){
@@ -636,20 +631,74 @@ function initMap(){
 
 /* ── GALLERY ── */
 function initGallery(){
+  let limit = window.innerWidth <= 600 ? 4 : 6;
+  let expanded = false;
+  let initialRevealDone = false;
+
+  function updateGalleryDisplay() {
+    const activeBtn = document.querySelector('.flt-btn.act');
+    if(!activeBtn) return;
+    const f = activeBtn.getAttribute('data-f');
+    let visibleCount = 0;
+    
+    document.querySelectorAll('.gal-item').forEach((item, i) => {
+      const matchesFilter = f === 'all' || item.getAttribute('data-c') === f;
+      
+      if (matchesFilter) {
+        if (!expanded && visibleCount >= limit) {
+          // Hide because of limit
+          gsap.to(item,{opacity:0,scale:.92,duration:.28,overwrite:'auto', onComplete:()=>item.classList.add('gone')});
+        } else {
+          // Show
+          if (!initialRevealDone && document.getElementById('gal-grid')) {
+            // First time reveal uses scrollTrigger
+            gsap.fromTo(item,{opacity:0,scale:.94},{opacity:1,scale:1,duration:.55,delay:(visibleCount%4)*.08,ease:'power2.out',
+              scrollTrigger:{trigger:'#gal-grid',start:'top 85%',toggleActions:'play none none none'},
+              onStart:()=>item.classList.remove('gone')
+            });
+          } else {
+            // Normal filter show
+            gsap.to(item,{opacity:1,scale:1,duration:.28,overwrite:'auto', onStart:()=>item.classList.remove('gone')});
+          }
+        }
+        visibleCount++;
+      } else {
+        // Hide because of filter
+        gsap.to(item,{opacity:0,scale:.92,duration:.28,overwrite:'auto', onComplete:()=>item.classList.add('gone')});
+      }
+    });
+
+    initialRevealDone = true;
+
+    const loadMoreBtn = document.getElementById('gal-load-more');
+    if(loadMoreBtn) {
+      if(visibleCount > limit && !expanded) {
+        loadMoreBtn.style.display = 'inline-flex';
+      } else {
+        loadMoreBtn.style.display = 'none';
+      }
+    }
+    setTimeout(() => ScrollTrigger.refresh(), 350);
+  }
+
+  updateGalleryDisplay();
+
   document.querySelectorAll('.flt-btn').forEach(btn=>{
     btn.addEventListener('click',()=>{
       document.querySelectorAll('.flt-btn').forEach(b=>b.classList.remove('act'));
       btn.classList.add('act');
-      const f=btn.getAttribute('data-f');
-      document.querySelectorAll('.gal-item').forEach(item=>{
-        const show=f==='all'||item.getAttribute('data-c')===f;
-        gsap.to(item,{opacity:show?1:0,scale:show?1:.92,duration:.28,overwrite:'auto',
-          onStart:()=>{if(show)item.classList.remove('gone');},
-          onComplete:()=>{if(!show)item.classList.add('gone');}
-        });
-      });
+      expanded = false; 
+      updateGalleryDisplay();
     });
   });
+
+  const loadMoreBtn = document.getElementById('gal-load-more');
+  if(loadMoreBtn) {
+    loadMoreBtn.addEventListener('click', () => {
+      expanded = true;
+      updateGalleryDisplay();
+    });
+  }
   const lb=document.getElementById('lb');
   const lbI=document.getElementById('lb-img');
   const lbX=document.getElementById('lb-x');
@@ -722,6 +771,27 @@ function initProcessScroll() {
     end: isMobile ? 'bottom 60%' : '+=1100',
     scrub: 0.8,
     invalidateOnRefresh: true,
+    onRefresh: () => {
+      if (isMobile && items.length > 0) {
+        const lineBg = document.querySelector('.proc-line-bg');
+        const grid = document.querySelector('.proc-grid');
+        const lastItem = items[items.length - 1];
+        const lastNode = lastItem ? lastItem.querySelector('.proc-node') : null;
+        if (lineBg && grid && lastNode) {
+          const gridTop = grid.getBoundingClientRect().top;
+          const nodeCenter = lastNode.getBoundingClientRect().top + (lastNode.offsetHeight / 2);
+          // Set lineBg to span exactly from top:48px down to the center of the last node
+          lineBg.style.bottom = 'auto';
+          lineBg.style.height = (nodeCenter - gridTop - 48) + 'px';
+        }
+      } else {
+        const lineBg = document.querySelector('.proc-line-bg');
+        if(lineBg) {
+          lineBg.style.height = '';
+          lineBg.style.bottom = '';
+        }
+      }
+    },
     onUpdate: (self) => {
       const prog = self.progress;
 
