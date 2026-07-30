@@ -2376,3 +2376,44 @@
   transform: scale(0.96) !important;
   box-shadow: 0 2px 8px rgba(245, 166, 35, 0.4) !important;
 }
+
+
+/* Mobile overrides for bottom section / res-thumb */
+@media (max-width: 600px) {
+  .ab-col, .ct-col {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  .res-thumb {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+    padding: 18px !important;
+    margin: 20px 0 !important;
+    border-radius: 20px !important;
+  }
+  .res-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+  }
+  .res-text h4 {
+    font-size: 1.25rem !important;
+  }
+  .res-desc {
+    font-size: 0.9rem !important;
+    margin-top: 6px !important;
+  }
+  .res-cta {
+    margin-left: 0 !important;
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 12px !important;
+    font-size: 0.95rem !important;
+  }
+  .res-icon {
+    width: 46px !important;
+    height: 46px !important;
+    font-size: 1.1rem !important;
+  }
+}
