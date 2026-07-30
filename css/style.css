@@ -1,4 +1,4 @@
-﻿/* ── DESIGN SYSTEM & ROOT VARIABLES ── */
+/* ── DESIGN SYSTEM & ROOT VARIABLES ── */
     :root {
       --bg-void:       #07060a;
       --bg-deep:       #0d0b10;
@@ -1462,8 +1462,8 @@
     /* ── FLOATING GLASS HOTLINE BOX (Bottom-Right, Top-Only Visibility) ── */
     .hl-glass-box {
       position: fixed;
-      bottom: 28px;
-      right: 28px;
+      bottom: 48px;
+      right: 32px;
       z-index: 998;
       display: flex;
       align-items: center;
@@ -1537,8 +1537,8 @@
 
     #back-top {
       position: fixed;
-      bottom: 28px;
-      left: 28px;
+      bottom: 48px;
+      left: 32px;
       z-index: 900;
       width: 44px;
       height: 44px;
@@ -1676,8 +1676,8 @@
     /* 1. Chatbot Trigger Button */
     .chat-trig-btn {
       position: fixed;
-      bottom: 115px;
-      right: 28px;
+      bottom: 135px;
+      right: 32px;
       z-index: 999;
       width: 52px;
       height: 52px;
@@ -1697,7 +1697,7 @@
     }
 
     body.scrolled-down .chat-trig-btn {
-      bottom: 28px;
+      bottom: 48px;
     }
 
     .chat-trig-btn:hover, .chat-trig-btn.active {
@@ -1711,8 +1711,8 @@
     /* 2. Back to Top Button */
     .btt-btn {
       position: fixed;
-      bottom: 178px;
-      right: 32px;
+      bottom: 198px;
+      right: 36px;
       z-index: 997;
       width: 44px;
       height: 44px;
