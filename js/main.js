@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 let lenis;
 
 /* ── LOADER ── */
@@ -762,65 +762,72 @@ function initProcessScroll() {
 
   if (!processSec || items.length === 0) return;
 
-  const isMobile = window.innerWidth <= 992;
+  let mm = gsap.matchMedia();
 
-  ScrollTrigger.create({
-    trigger: processSec,
-    pin: !isMobile,
-    start: isMobile ? 'top 75%' : 'top 4%',
-    end: isMobile ? 'bottom 60%' : '+=1100',
-    scrub: 0.8,
-    invalidateOnRefresh: true,
-    onRefresh: () => {
-      if (isMobile && items.length > 0) {
-        const lineBg = document.querySelector('.proc-line-bg');
-        const grid = document.querySelector('.proc-grid');
-        const lastItem = items[items.length - 1];
-        const lastNode = lastItem ? lastItem.querySelector('.proc-node') : null;
-        if (lineBg && grid && lastNode) {
-          const gridTop = grid.getBoundingClientRect().top;
-          const nodeCenter = lastNode.getBoundingClientRect().top + (lastNode.offsetHeight / 2);
-          // Set lineBg to span exactly from top:48px down to the center of the last node
-          lineBg.style.bottom = 'auto';
-          lineBg.style.height = (nodeCenter - gridTop - 48) + 'px';
-        }
-      } else {
-        const lineBg = document.querySelector('.proc-line-bg');
-        if(lineBg) {
-          lineBg.style.height = '';
-          lineBg.style.bottom = '';
-        }
-      }
-    },
-    onUpdate: (self) => {
-      const prog = self.progress;
+  mm.add({
+    isMobile: "(max-width: 992px)",
+    isDesktop: "(min-width: 993px)"
+  }, (context) => {
+    let { isMobile } = context.conditions;
 
-      // Animate connecting timeline bar
-      if (lineFill) {
-        if (isMobile) {
-          lineFill.style.height = (prog * 100) + '%';
-          lineFill.style.width = '100%';
+    ScrollTrigger.create({
+      trigger: processSec,
+      pin: !isMobile,
+      start: isMobile ? 'top 75%' : 'top 4%',
+      end: isMobile ? 'bottom 60%' : '+=1100',
+      scrub: 0.8,
+      invalidateOnRefresh: true,
+      onRefresh: () => {
+        if (isMobile && items.length > 0) {
+          const lineBg = document.querySelector('.proc-line-bg');
+          const grid = document.querySelector('.proc-grid');
+          const lastItem = items[items.length - 1];
+          const lastNode = lastItem ? lastItem.querySelector('.proc-node') : null;
+          if (lineBg && grid && lastNode) {
+            const gridTop = grid.getBoundingClientRect().top;
+            const nodeCenter = lastNode.getBoundingClientRect().top + (lastNode.offsetHeight / 2);
+            // Set lineBg to span exactly from top:48px down to the center of the last node
+            lineBg.style.bottom = 'auto';
+            lineBg.style.height = (nodeCenter - gridTop - 48) + 'px';
+          }
         } else {
-          lineFill.style.width = (prog * 100) + '%';
-          lineFill.style.height = '100%';
+          const lineBg = document.querySelector('.proc-line-bg');
+          if(lineBg) {
+            lineBg.style.height = '';
+            lineBg.style.bottom = '';
+          }
         }
-      }
+      },
+      onUpdate: (self) => {
+        const prog = self.progress;
 
-      // Step threshold reveals (Step 1 is active by default at start)
-      const totalSteps = items.length;
-      items.forEach((item, idx) => {
-        if (idx === 0) {
-          item.classList.add('active');
-          return;
+        // Animate connecting timeline bar
+        if (lineFill) {
+          if (isMobile) {
+            lineFill.style.height = (prog * 100) + '%';
+            lineFill.style.width = '100%';
+          } else {
+            lineFill.style.width = (prog * 100) + '%';
+            lineFill.style.height = '100%';
+          }
         }
-        const threshold = (idx) / (totalSteps - 0.7);
-        if (prog >= threshold) {
-          item.classList.add('active');
-        } else {
-          item.classList.remove('active');
-        }
-      });
-    }
+
+        // Step threshold reveals (Step 1 is active by default at start)
+        const totalSteps = items.length;
+        items.forEach((item, idx) => {
+          if (idx === 0) {
+            item.classList.add('active');
+            return;
+          }
+          const threshold = (idx) / (totalSteps - 0.7);
+          if (prog >= threshold) {
+            item.classList.add('active');
+          } else {
+            item.classList.remove('active');
+          }
+        });
+      }
+    });
   });
 
   // Clicking node scrolls directly to that step's scroll position
