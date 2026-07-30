@@ -1,4 +1,4 @@
-﻿/* ── DESIGN SYSTEM & ROOT VARIABLES ── */
+/* ── DESIGN SYSTEM & ROOT VARIABLES ── */
     :root {
       --bg-void:       #07060a;
       --bg-deep:       #0d0b10;
@@ -352,33 +352,33 @@
     .hero-promo .li { display: block; }
 
     .hp-top { margin-bottom: 0px; width: 100%; }
-    .hp-year { font-size: 1.35rem; color: rgba(255,255,255,0.9); margin-bottom: 2px; font-weight: 300; font-family: var(--font-si); line-height: 1; }
+    .hp-year { font-size: clamp(0.9rem, 1.2vw, 1.35rem); color: rgba(255,255,255,0.9); margin-bottom: 2px; font-weight: 300; font-family: var(--font-si); line-height: 1; }
     .hp-yr-num { font-size: 1em; font-weight: 300; margin-right: 4px; font-family: 'Plus Jakarta Sans', sans-serif; }
     .hp-row1 { display: flex; align-items: center; justify-content: flex-start; gap: 20px; width: 100%; }
     .hp-text { display: flex; flex-direction: column; justify-content: center; }
-    .hp-bold { font-size: clamp(2.4rem, 4.8vw, 3.3rem); font-weight: 700; color: #fff; line-height: 1.06; letter-spacing: -0.5px; font-family: var(--font-si); }
+    .hp-bold { font-size: clamp(1.8rem, 3.2vw, 3.3rem); font-weight: 700; color: #fff; line-height: 1.06; letter-spacing: -0.5px; font-family: var(--font-si); }
     .hp-letter-a { font-size: 1.25em; font-weight: 900; font-family: 'Plus Jakarta Sans', sans-serif; margin-left: 4px; display: inline-block; }
     
     .hp-frac { padding: 0 !important; margin: 0 !important; }
   .hp-frac-wrap { display: flex; align-items: center; padding-right: 10px; flex-shrink: 0; }
     .hp-frac { display: inline-flex; align-items: center; font-family: 'Times New Roman', Times, Georgia, serif; color: var(--primary); font-weight: 700; line-height: 1; position: relative; padding: 12px 0; }
-    .hp-num { font-size: 6.2rem; font-family: 'Times New Roman', Times, Georgia, serif; font-weight: 700; transform: translateY(-22px); }
-    .hp-slash { font-size: 10rem; font-weight: 100; font-family: 'Times New Roman', Times, Georgia, serif; margin: 0 -12px; transform: scaleY(1.1) rotate(6deg); }
-    .hp-den { font-size: 6.2rem; font-family: 'Times New Roman', Times, Georgia, serif; font-weight: 700; transform: translateY(28px); }
-    .hp-suffix { font-size: 2.2rem; color: #fff; font-weight: 600; margin-left: 10px; font-family: var(--font-si); align-self: center; transform: translateY(0); }
+    .hp-num { font-size: clamp(3rem, 5vw, 6.2rem); font-family: 'Times New Roman', Times, Georgia, serif; font-weight: 700; transform: translateY(-0.35em); }
+    .hp-slash { font-size: clamp(5rem, 8vw, 10rem); font-weight: 100; font-family: 'Times New Roman', Times, Georgia, serif; margin: 0 -0.12em; transform: scaleY(1.1) rotate(6deg); }
+    .hp-den { font-size: clamp(3rem, 5vw, 6.2rem); font-family: 'Times New Roman', Times, Georgia, serif; font-weight: 700; transform: translateY(0.45em); }
+    .hp-suffix { font-size: clamp(1.2rem, 1.8vw, 2.2rem); color: #fff; font-weight: 600; margin-left: 10px; font-family: var(--font-si); align-self: center; transform: translateY(0); }
 
     .hp-div { border: none; height: 1px; background: linear-gradient(90deg, rgba(255,255,255,0.4) 0%, rgba(245, 166, 35, 0.3) 60%, transparent 100%); margin: 24px 0 18px 0; width: 520px; max-width: 90%; }
 
     .hp-mid { margin-bottom: 16px; width: 100%; }
-    .hp-small { font-size: 1.35rem; color: rgba(255,255,255,0.88); line-height: 1.35; margin-bottom: 6px; font-weight: 300; font-family: var(--font-si); }
-    .hp-record { font-size: clamp(2rem, 3.8vw, 2.7rem); font-weight: 800; color: #fff; line-height: 1.1; margin-bottom: -16px; font-family: var(--font-si); position: relative; z-index: 4; text-shadow: 0 3px 8px rgba(0,0,0,0.9); }
+    .hp-small { font-size: clamp(0.9rem, 1.2vw, 1.35rem); color: rgba(255,255,255,0.88); line-height: 1.35; margin-bottom: 6px; font-weight: 300; font-family: var(--font-si); }
+    .hp-record { font-size: clamp(1.6rem, 2.2vw, 2.7rem); font-weight: 800; color: #fff; line-height: 1.1; margin-bottom: -16px; font-family: var(--font-si); position: relative; z-index: 4; text-shadow: 0 3px 8px rgba(0,0,0,0.9); }
     .hp-chem-row { display: flex; align-items: center; gap: 0px; flex-wrap: nowrap; margin-bottom: 5px; width: 100%; }
-    .hp-chem { font-size: clamp(3rem, 5.8vw, 4.4rem); font-weight: 900; color: var(--primary); line-height: 1; letter-spacing: -1.5px; position: relative; z-index: 3; margin-right: -4px; -webkit-text-stroke: 1px #000; text-shadow: 2px 2px 0 #000, 0 4px 12px rgba(0,0,0,0.9); font-family: 'Inter', system-ui, -apple-system, sans-serif; }
-    .hp-badge { background: var(--primary); color: #000; padding: 4px 18px 4px 28px; font-weight: 800; font-size: clamp(1.5rem, 2.6vw, 1.9rem); display: inline-flex; align-items: center; font-family: var(--font-si); clip-path: polygon(14px 0, 100% 0, 100% 100%, 0 100%); z-index: 1; flex-shrink: 0; height: fit-content; }
+    .hp-chem { font-size: clamp(2.6rem, 3.8vw, 4.4rem); font-weight: 900; color: var(--primary); line-height: 1; letter-spacing: -1.5px; position: relative; z-index: 3; margin-right: -4px; -webkit-text-stroke: 1px #000; text-shadow: 2px 2px 0 #000, 0 4px 12px rgba(0,0,0,0.9); font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    .hp-badge { background: var(--primary); color: #000; padding: 4px 18px 4px 28px; font-weight: 800; font-size: clamp(1.1rem, 1.6vw, 1.9rem); display: inline-flex; align-items: center; font-family: var(--font-si); clip-path: polygon(14px 0, 100% 0, 100% 100%, 0 100%); z-index: 1; flex-shrink: 0; height: fit-content; }
 
     .hp-bot { margin-bottom: 0px; width: 100%; }
     .hp-massive {
-      font-size: clamp(6.2rem, 15.5vw, 11rem);
+      font-size: clamp(5rem, 8.5vw, 11rem);
       font-weight: 900;
       color: var(--primary);
       line-height: 0.85;
