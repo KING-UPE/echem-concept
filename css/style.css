@@ -2219,15 +2219,15 @@
   }
 
   .hp-year {
-    font-size: 1.1rem !important;
+    font-size: 0.9rem !important;
   }
 
   .hp-bold {
-    font-size: clamp(1.75rem, 6.2vw, 2.4rem) !important;
+    font-size: clamp(1.4rem, 5vw, 1.9rem) !important;
   }
 
   .hp-frac-wrap {
-    transform: scale(0.72) !important;
+    transform: scale(0.55) !important;
     transform-origin: left center !important;
     margin-left: 0px !important;
     margin-right: 0 !important;
@@ -2237,30 +2237,30 @@
   .hp-div {
     width: 100% !important;
     max-width: 100% !important;
-    margin: 22px 0 14px 0 !important;
+    margin: 14px 0 8px 0 !important;
   }
 
   .hp-small {
-    font-size: 1.1rem !important;
-    line-height: 1.3 !important;
+    font-size: 0.9rem !important;
+    line-height: 1.2 !important;
   }
 
   .hp-record {
-    font-size: clamp(1.5rem, 5vw, 2rem) !important;
-    margin-bottom: -10px !important;
+    font-size: clamp(1.1rem, 4vw, 1.5rem) !important;
+    margin-bottom: -6px !important;
   }
 
   .hp-chem {
-    font-size: clamp(2.1rem, 8.5vw, 3.2rem) !important;
+    font-size: clamp(1.6rem, 6vw, 2.4rem) !important;
   }
 
   .hp-badge {
-    font-size: clamp(1.1rem, 4vw, 1.4rem) !important;
-    padding: 3px 12px 3px 18px !important;
+    font-size: clamp(0.9rem, 3.5vw, 1.1rem) !important;
+    padding: 2px 10px 2px 14px !important;
   }
 
   .hp-massive {
-    font-size: clamp(4.2rem, 16vw, 6.8rem) !important;
+    font-size: clamp(3.2rem, 12vw, 5rem) !important;
   }
 
   .hero-cta {
@@ -2270,8 +2270,8 @@
   }
 
   .hero-cta .btn {
-    padding: 11px 18px !important;
-    font-size: 0.8rem !important;
+    padding: 9px 14px !important;
+    font-size: 0.75rem !important;
     flex: 1 !important;
     justify-content: center !important;
     text-align: center !important;
