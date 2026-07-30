@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 let lenis;
 
 /* ── LOADER ── */
@@ -631,7 +631,7 @@ function initMap(){
 
 /* ── GALLERY ── */
 function initGallery(){
-  let limit = window.innerWidth <= 600 ? 4 : 6;
+  let limit = window.innerWidth <= 600 ? 4 : 8;
   let expanded = false;
   let initialRevealDone = false;
 
