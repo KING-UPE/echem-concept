@@ -2158,10 +2158,10 @@
     left: 50% !important;
     transform: translateX(-50%) translateY(-15px) scale(0.95) !important;
     width: min(340px, 90vw) !important;
-    background: rgba(10, 10, 16, 0.65) !important;
-    backdrop-filter: blur(24px) saturate(180%) !important;
-    -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
-    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    background: rgba(14, 12, 20, 0.92) !important;
+    backdrop-filter: blur(45px) saturate(200%) !important;
+    -webkit-backdrop-filter: blur(45px) saturate(200%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
     border-radius: 28px !important;
     padding: 22px 18px !important;
     flex-direction: column !important;
@@ -2348,8 +2348,27 @@
   .nav-acts { order: 2; display: flex !important; margin-left: auto !important; }
   .nav-hamburger { order: 3; margin-left: 16px !important; }
   .nav-login { display: none !important; }
-  .mobile-login { display: block !important; }
+  .mobile-login { display: block !important; background: linear-gradient(135deg, var(--primary), #d97706) !important; color: #000 !important; padding: 10px 16px !important; border-radius: 20px !important; margin-top: 8px !important; font-weight: 800 !important; box-shadow: 0 4px 16px rgba(245, 166, 35, 0.3) !important; }
 }
 @media (min-width: 901px) {
   .mobile-login { display: none !important; }
+}
+
+
+/* Mobile Login Button Fix */
+.nav-links a.mobile-login {
+  display: block !important;
+  background: linear-gradient(135deg, var(--primary), #d97706) !important;
+  color: #000 !important;
+  padding: 10px 16px !important;
+  border-radius: 24px !important;
+  margin-top: 8px !important;
+  font-weight: 800 !important;
+  box-shadow: 0 4px 16px rgba(245, 166, 35, 0.25) !important;
+  text-align: center !important;
+  transition: transform 0.2s, box-shadow 0.2s !important;
+}
+.nav-links a.mobile-login:active {
+  transform: scale(0.96) !important;
+  box-shadow: 0 2px 8px rgba(245, 166, 35, 0.4) !important;
 }
