@@ -2288,25 +2288,25 @@
   }
 
   .chat-trig-btn {
-    bottom: 72px !important;
+    bottom: 90px !important;
     right: 16px !important;
     width: 46px !important;
     height: 46px !important;
   }
 
   .btt-btn {
-    bottom: 126px !important;
+    bottom: 146px !important;
     right: 16px !important;
     width: 40px !important;
     height: 40px !important;
   }
 
   body.scrolled-down .chat-trig-btn {
-    bottom: 72px !important;
+    bottom: 90px !important;
   }
 
   body.scrolled-down .btt-btn {
-    bottom: 126px !important;
+    bottom: 146px !important;
   }
 
   .bot-modal {
